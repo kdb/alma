@@ -328,7 +328,7 @@ class AlmaClient {
         'create_date' => $item->getAttribute('createDate'),
         'valid_from' => $item->getAttribute('validFromDate'),
         'valid_to' => $item->getAttribute('validToDate'),
-        'queue_number' => $item->getAttribute('pickUpNo'),
+        'queue_number' => $item->getAttribute('queueNo'),
         'organisation_id' => $item->getAttribute('organisationId'),
         'record_id' => $item->getElementsByTagName('catalogueRecord')->item(0)->getAttribute('id'),
         'record_available' => $item->getElementsByTagName('catalogueRecord')->item(0)->getAttribute('isAvailable'),
