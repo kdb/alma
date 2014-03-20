@@ -171,18 +171,16 @@ function alma_user_user_library_settings_form(&$form_state, $account) {
     '#default_value' => (isset($account->interest_period) && $account->interest_period > 10) ? $account->interest_period : ding_reservation_default_interest_period(),
   );
 
+  // Temporary removed. Use empty values to be extra careful not to trigger some
+  // error elsewhere.
   $form['suspend_start'] = array(
-    '#type'          => 'date_popup',
-    '#title'         => t('Suspend reservations from'),
-    '#date_format'   => DATE_FORMAT_DATE,
-    '#default_value' => (isset($info['absent_periods'][0])) ? $info['absent_periods'][0]['from_date'] : '',
+    '#type' => 'value',
+    '#value' => '',
   );
 
   $form['suspend_end'] = array(
-    '#type'          => 'date_popup',
-    '#title'         => t('To'),
-    '#date_format'   => DATE_FORMAT_DATE,
-    '#default_value' => (isset($info['absent_periods'][0])) ? $info['absent_periods'][0]['to_date'] : '',
+    '#type' => 'value',
+    '#value' => '',
   );
 
   $form['submit'] = array(
